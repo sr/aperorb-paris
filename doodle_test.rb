@@ -23,7 +23,6 @@ class DoodleTest < Test::Unit::TestCase
 end
 
 
-set :environment, :test
 class DoodleWebTest < Test::Unit::TestCase
   include Rack::Test::Methods
 
@@ -34,6 +33,7 @@ class DoodleWebTest < Test::Unit::TestCase
   def setup
     @doodle = Doodle.new('test')
     @doodle.add_question('Are you sure ?')
+    app.set :environment, :test
   end
 
   def test_render_index
