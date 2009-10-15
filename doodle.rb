@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'haml'
+require 'yaml'
 
 class Doodle
 
