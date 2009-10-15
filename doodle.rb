@@ -34,12 +34,12 @@ class Doodle
 
 end
 
-before do
-  @doodle = Doodle.new(options.environment.to_s)
+def doodle
+  @doodle ||= Doodle.new(options.environment.to_s)
 end
 
 get '/' do
-  @questions = @doodle.questions
+  @questions = doodle.questions
   haml :index
 end
 
